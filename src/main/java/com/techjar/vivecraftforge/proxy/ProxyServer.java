@@ -3,6 +3,7 @@ package com.techjar.vivecraftforge.proxy;
 import com.techjar.vivecraftforge.Config;
 import com.techjar.vivecraftforge.eventhandler.EventHandlerServer;
 import com.techjar.vivecraftforge.network.ChannelHandler;
+import com.techjar.vivecraftforge.network.VanillaWrapping;
 
 import com.techjar.vivecraftforge.VivecraftForge;
 import net.minecraft.init.Blocks;
@@ -18,6 +19,7 @@ public class ProxyServer extends ProxyCommon {
 	public void registerEventHandlers() {
 		super.registerEventHandlers();
 		MinecraftForge.EVENT_BUS.register(new EventHandlerServer());
+        MinecraftForge.EVENT_BUS.register(VanillaWrapping.class);
 		FMLCommonHandler.instance().bus().register(new EventHandlerServer());
 	}
 	
